@@ -1,0 +1,21 @@
+{
+  "name": "react-microfrontend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "run-s start:micro start:api-gateway",
+    "start:api-gateway": "cd ./api-gateway &&  ttab -t 'api-gateway' npm start",
+    "start:micro": "cd ./microService-1 &&  ttab -t 'micro' npm start",
+    "postinstall": "npm run install:api-gateway & npm run install:micro",
+    "install:api-gateway": "cd ./api-gateway && npm install",
+    "install:micro": "cd ./microService-1 && npm install"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "npm-run-all": "^4.1.5",
+    "ttab": "^0.8.0"
+  }
+}
